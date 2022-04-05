@@ -1,0 +1,566 @@
+{
+  "start_node": "E1",
+  "target_node": "14",
+  "speed": 25,
+  "swap_time": 0,
+  "nodes": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14"
+  ],
+  "connections": [
+    {
+      "first_node": "E1",
+      "second_node": "E2",
+      "distance": 10
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E3",
+      "distance": 8.5
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E9",
+      "distance": 10
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E10",
+      "distance": 3.5
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E4",
+      "distance": 6.3
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E9",
+      "distance": 9.4
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E13",
+      "distance": 18.7
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E5",
+      "distance": 13
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E8",
+      "distance": 15.3
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E13",
+      "distance": 12.8
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E6",
+      "distance": 3
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E7",
+      "distance": 2.4
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E8",
+      "distance": 30
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E9",
+      "distance": 9.6
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E12",
+      "distance": 6.4
+    },
+    {
+      "first_node": "E9",
+      "second_node": "E11",
+      "distance": 12.2
+    },
+    {
+      "first_node": "E13",
+      "second_node": "E14",
+      "distance": 5.1
+    }
+  ],
+  "direct_distances": [
+    {
+      "first_node": "E1",
+      "second_node": "E2",
+      "distance": 10
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E3",
+      "distance": 18
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E4",
+      "distance": 24.8
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E5",
+      "distance": 36.4
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E6",
+      "distance": 38.8
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E7",
+      "distance": 35.8
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E8",
+      "distance": 25.4
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E9",
+      "distance": 17.6
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E10",
+      "distance": 9.1
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E11",
+      "distance": 16.7
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E12",
+      "distance": 27.3
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E13",
+      "distance": 27.6
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E14",
+      "distance": 29.8
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E3",
+      "distance": 8.5
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E4",
+      "distance": 14.8
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E5",
+      "distance": 26.2
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E6",
+      "distance": 29.1
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E7",
+      "distance": 26.1
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E8",
+      "distance": 17.3
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E9",
+      "distance": 10
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E10",
+      "distance": 3.5
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E11",
+      "distance": 15.5
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E12",
+      "distance": 20.9
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E13",
+      "distance": 19.1
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E14",
+      "distance": 21.8
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E4",
+      "distance": 6.3
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E5",
+      "distance": 18.2
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E6",
+      "distance": 20.6
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E7",
+      "distance": 17.6
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E8",
+      "distance": 13.6
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E9",
+      "distance": 9.4
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E10",
+      "distance": 10.3
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E11",
+      "distance": 19.5
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E12",
+      "distance": 19.1
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E13",
+      "distance": 12.1
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E14",
+      "distance": 16.6
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E5",
+      "distance": 12
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E6",
+      "distance": 14.4
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E7",
+      "distance": 11.5
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E8",
+      "distance": 12.4
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E9",
+      "distance": 12.6
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E10",
+      "distance": 16.7
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E11",
+      "distance": 23.6
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E12",
+      "distance": 18.6
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E13",
+      "distance": 10.6
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E14",
+      "distance": 15.4
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E6",
+      "distance": 3
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E7",
+      "distance": 2.4
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E8",
+      "distance": 19.4
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E9",
+      "distance": 23.3
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E10",
+      "distance": 28.2
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E11",
+      "distance": 34.2
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E12",
+      "distance": 24.8
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E13",
+      "distance": 14.5
+    },
+    {
+      "first_node": "E5",
+      "second_node": "E14",
+      "distance": 17.9
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E7",
+      "distance": 3.3
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E8",
+      "distance": 22.3
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E9",
+      "distance": 25.7
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E10",
+      "distance": 30.3
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E11",
+      "distance": 36.7
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E12",
+      "distance": 27.6
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E13",
+      "distance": 15.2
+    },
+    {
+      "first_node": "E6",
+      "second_node": "E14",
+      "distance": 18.2
+    },
+    {
+      "first_node": "E7",
+      "second_node": "E8",
+      "distance": 20
+    },
+    {
+      "first_node": "E7",
+      "second_node": "E9",
+      "distance": 23
+    },
+    {
+      "first_node": "E7",
+      "second_node": "E10",
+      "distance": 27.3
+    },
+    {
+      "first_node": "E7",
+      "second_node": "E11",
+      "distance": 34.2
+    },
+    {
+      "first_node": "E7",
+      "second_node": "E12",
+      "distance": 25.7
+    },
+    {
+      "first_node": "E7",
+      "second_node": "E13",
+      "distance": 12.4
+    },
+    {
+      "first_node": "E7",
+      "second_node": "E14",
+      "distance": 15.6
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E9",
+      "distance": 8.2
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E10",
+      "distance": 20.3
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E11",
+      "distance": 16.1
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E12",
+      "distance": 6.4
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E13",
+      "distance": 22.7
+    },
+    {
+      "first_node": "E8",
+      "second_node": "E14",
+      "distance": 27.6
+    },
+    {
+      "first_node": "E9",
+      "second_node": "E10",
+      "distance": 13.5
+    },
+    {
+      "first_node": "E9",
+      "second_node": "E11",
+      "distance": 11.2
+    },
+    {
+      "first_node": "E9",
+      "second_node": "E12",
+      "distance": 10.9
+    },
+    {
+      "first_node": "E9",
+      "second_node": "E13",
+      "distance": 21.2
+    },
+    {
+      "first_node": "E9",
+      "second_node": "E14",
+      "distance": 26.6
+    },
+    {
+      "first_node": "E10",
+      "second_node": "E11",
+      "distance": 17.6
+    },
+    {
+      "first_node": "E10",
+      "second_node": "E12",
+      "distance": 24.2
+    },
+    {
+      "first_node": "E10",
+      "second_node": "E13",
+      "distance": 18.7
+    },
+    {
+      "first_node": "E10",
+      "second_node": "E14",
+      "distance": 21.2
+    },
+    {
+      "first_node": "E11",
+      "second_node": "E12",
+      "distance": 14.2
+    },
+    {
+      "first_node": "E11",
+      "second_node": "E13",
+      "distance": 31.5
+    },
+    {
+      "first_node": "E11",
+      "second_node": "E14",
+      "distance": 35.5
+    },
+    {
+      "first_node": "E12",
+      "second_node": "E13",
+      "distance": 28.8
+    },
+    {
+      "first_node": "E12",
+      "second_node": "E14",
+      "distance": 33.6
+    },
+    {
+      "first_node": "E13",
+      "second_node": "E14",
+      "distance": 5.1
+    }
+  ]
+}
