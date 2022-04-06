@@ -2,7 +2,6 @@
   "start_node": "E1",
   "target_node": "14",
   "speed": 25,
-  "swap_time": 0,
   "nodes": [
     "E1",
     "E2",
