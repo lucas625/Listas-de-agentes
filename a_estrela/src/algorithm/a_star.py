@@ -25,23 +25,18 @@ class AStar:
         self.heuristics = heuristics
         self.start_node = start_node
         self.target_node = target_node
-        self.frontier = []
+        self.ordered_frontier_node_names = []
         self.dict_frontier = {}
         self.visited_nodes = []
 
-    def run(self):
+    def run(self) -> Optional[FrontierNode]:
         starting_frontier_node = self._build_frontier_node(self.start_node, 0)
-        self.frontier = [starting_frontier_node.node]
+        self.ordered_frontier_node_names = [starting_frontier_node.node]
         self.dict_frontier = {
             starting_frontier_node.node: starting_frontier_node
         }
         self.visited_nodes = []
-        resulting_frontier_node = self._iterate()
-        if resulting_frontier_node:
-            path_string = f'{resulting_frontier_node.path} with {resulting_frontier_node.total_distance} total distance'
-        else:
-            path_string = 'Does not exist'
-        print(f'Path from {self.start_node} to {self.target_node}: {path_string}')
+        return self._iterate()
 
     def _build_frontier_node(
             self,
@@ -65,10 +60,10 @@ class AStar:
     def _iterate(self) -> Optional[FrontierNode]:
         found_path = False
         resulting_frontier_node = None
-        while len(self.frontier) > 0 and not found_path:
+        while len(self.ordered_frontier_node_names) > 0 and not found_path:
             current_frontier_node = self._pop_current_node()
 
-            if current_frontier_node == self.target_node:
+            if current_frontier_node.node == self.target_node:
                 found_path = True
                 resulting_frontier_node = current_frontier_node
 
@@ -79,12 +74,13 @@ class AStar:
                         connection['distance'],
                         current_frontier_node
                     )
+                    self._add_node_to_frontier(frontier_node)
 
         return resulting_frontier_node
 
     def _pop_current_node(self) -> FrontierNode:
-        current_node = self.frontier[0]
-        self.frontier = self.frontier[1:]
+        current_node = self.ordered_frontier_node_names[0]
+        self.ordered_frontier_node_names = self.ordered_frontier_node_names[1:]
         self.visited_nodes.append(current_node)
         return self.dict_frontier[current_node]
 
@@ -96,21 +92,30 @@ class AStar:
             if frontier_node.node in self.dict_frontier.keys():
                 if frontier_node.total_distance < self.dict_frontier[frontier_node.node].total_distance:
                     self.dict_frontier[frontier_node.node] = frontier_node
+                    # TODO: update order
             else:
                 self._insertion_sort(frontier_node)
 
     def _insertion_sort(self, frontier_node: FrontierNode):
         """
-        Inserts a new FrontierNode on the frontier, in an ordered way.
+        Inserts a new FrontierNode on the frontier, in an ordered way basing on the total_evaluation of the FrontierNode
         """
         self.dict_frontier[frontier_node.node] = frontier_node
         found = False
         index = 0
-        while index < len(self.frontier) and not found:
-            if self.dict_frontier[self.frontier[index]].total_evaluation > frontier_node.total_evaluation:
-                self.frontier = self.frontier[:index] + [frontier_node.node] + self.frontier[index:]
+        while index < len(self.ordered_frontier_node_names) and not found:
+            if (
+                self.dict_frontier[self.ordered_frontier_node_names[index]].total_evaluation >
+                frontier_node.total_evaluation
+            ):
                 found = True
+                self.ordered_frontier_node_names = (
+                    self.ordered_frontier_node_names[:index] +
+                    [frontier_node.node] +
+                    self.ordered_frontier_node_names[index:]
+                )
+            index += 1
 
         if not found:
-            self.frontier.append(frontier_node.node)
+            self.ordered_frontier_node_names.append(frontier_node.node)
 

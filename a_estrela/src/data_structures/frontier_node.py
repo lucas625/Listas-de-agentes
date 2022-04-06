@@ -14,3 +14,6 @@ class FrontierNode:
         self.total_distance = total_distance
         self.total_evaluation = total_evaluation
         self.path = path
+
+    def __str__(self):
+        return self.node
