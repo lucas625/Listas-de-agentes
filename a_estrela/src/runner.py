@@ -1,4 +1,4 @@
-from helpers.input_reader import InputReader
+from src.helpers.input_reader import InputReader
 
 
 class Runner:
@@ -8,3 +8,4 @@ class Runner:
 
     def run(self):
         run_data = InputReader.read_data(self.json_input_file_path)
+        print(run_data)

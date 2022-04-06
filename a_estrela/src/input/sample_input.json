@@ -1,6 +1,6 @@
 {
   "start_node": "E1",
-  "target_node": "14",
+  "target_node": "E14",
   "speed": 25,
   "nodes": [
     "E1",
