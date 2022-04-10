@@ -58,6 +58,9 @@ class AStar:
         )
 
     def _iterate(self) -> Optional[FrontierNode]:
+        """
+        Runs the iterations of the algorithm.
+        """
         found_path = False
         resulting_frontier_node = None
         while len(self.ordered_frontier_node_names) > 0 and not found_path:
