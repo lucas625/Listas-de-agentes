@@ -92,7 +92,10 @@ class AStar:
             self._add_node_to_frontier(connection_frontier_node)
 
     def _add_node_to_frontier(self, frontier_node: FrontierNode):
-        if not self._is_node_visited(frontier_node):
+        if self._is_node_visited(frontier_node):
+            if self._is_new_path_to_node_closer_than_old_path(frontier_node):
+                self._insertion_sort(frontier_node)
+        else:
             if self._is_node_on_frontier(frontier_node):
                 if self._is_new_path_to_node_closer_than_old_path(frontier_node):
                     self._update_node_on_frontier(frontier_node)

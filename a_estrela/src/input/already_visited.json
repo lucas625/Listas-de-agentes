@@ -1,0 +1,61 @@
+{
+  "start_node": "E1",
+  "target_node": "E5",
+  "speed": 25,
+  "nodes": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+  ],
+  "connections": [
+    {
+      "first_node": "E1",
+      "second_node": "E2",
+      "distance": 20
+    },
+    {
+      "first_node": "E1",
+      "second_node": "E3",
+      "distance": 25
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E3",
+      "distance": 4
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E4",
+      "distance": 10
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E5",
+      "distance": 10
+    }
+  ],
+  "direct_distances": [
+    {
+      "first_node": "E1",
+      "second_node": "E5",
+      "distance": 15
+    },
+    {
+      "first_node": "E2",
+      "second_node": "E5",
+      "distance": 20
+    },
+    {
+      "first_node": "E3",
+      "second_node": "E5",
+      "distance": 10
+    },
+    {
+      "first_node": "E4",
+      "second_node": "E5",
+      "distance": 10
+    }
+  ]
+}
