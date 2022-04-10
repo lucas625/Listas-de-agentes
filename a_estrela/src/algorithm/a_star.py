@@ -36,6 +36,7 @@ class AStar:
             starting_frontier_node.name: starting_frontier_node
         }
         self.visited_nodes = []
+        self._print_start()
         return self._iterate()
 
     def _build_frontier_node(
@@ -57,6 +58,9 @@ class AStar:
             path=path
         )
 
+    def _print_start(self):
+        print(f'Searching for the best path from {self.start_node_name} to {self.target_node_name}')
+
     def _iterate(self) -> Optional[FrontierNode]:
         """
         Runs the iterations of the algorithm.
@@ -64,6 +68,7 @@ class AStar:
         found_path = False
         resulting_frontier_node = None
         while len(self.ordered_frontier_node_names) > 0 and not found_path:
+            self._print_frontier()
             current_frontier_node = self._pop_current_node()
             if self._is_final_node(current_frontier_node):
                 found_path = True
@@ -72,6 +77,9 @@ class AStar:
                 self._add_node_connections_to_frontier(current_frontier_node)
 
         return resulting_frontier_node
+
+    def _print_frontier(self):
+        print(f'Current frontier: {self.ordered_frontier_node_names}')
 
     def _pop_current_node(self) -> FrontierNode:
         """
@@ -97,6 +105,8 @@ class AStar:
     def _add_node_to_frontier(self, frontier_node: FrontierNode):
         if self._is_node_visited(frontier_node):
             if self._is_new_path_to_node_closer_than_old_path(frontier_node):
+                old_index = self.visited_nodes.index(frontier_node.name)
+                del self.visited_nodes[old_index]
                 self._insertion_sort(frontier_node)
         else:
             if self._is_node_on_frontier(frontier_node):
