@@ -36,12 +36,13 @@ class MinMax:
             self.print(f'Player {self.current_player} is playing.')
             self.print(f'Current state:\n{PrintHelper.state_to_str(self.state)}')
             first_player_possible_plays = self._generate_possible_plays(self.state, self.current_player)
-            self.print(f'Possible plays: {first_player_possible_plays}')
+            plays_str = '\n|\n'.join([PrintHelper.state_to_str(state) for state in first_player_possible_plays])
+            self.print(f'----- Possible plays -----\n{plays_str}')
             second_player_possible_plays = []
             for first_player_possible_play in first_player_possible_plays:
                 if self._has_player_won_on_state(first_player_possible_play, self.current_player) and not finished:
                     print(f'----- Player: {self.current_player} won -----')
-                    print(f'Final state:\n{PrintHelper.state_to_str(first_player_possible_play)}')
+                    print(f'----- Final state -----\n{PrintHelper.state_to_str(first_player_possible_play)}')
                     self.selected_plays.append(first_player_possible_play)
                     finished = True
                 else:
@@ -49,9 +50,12 @@ class MinMax:
                         self._generate_possible_plays(first_player_possible_play, self._get_next_player())
                     )
             if not finished:
-                self.print(f'Next player possible plays: {second_player_possible_plays}')
+                self.print(f'----- Next player possible plays -----')
+                for index in range(len(first_player_possible_plays)):
+                    next_plays_str = '\n|\n'.join([PrintHelper.state_to_str(state) for state in second_player_possible_plays[index]])
+                    self.print(f'Next actions for action {index}:\n{next_plays_str}')
                 points = self._count_points(first_player_possible_plays, second_player_possible_plays)
-                self.print(f'Possible plays\' points: {points}')
+                self.print(f'----- Possible plays\' points -----\n{points}')
                 self._update_state_based_on_points(first_player_possible_plays, points)
 
     def _get_next_player(self):
@@ -105,8 +109,8 @@ class MinMax:
     def _has_player_won_on_state_horizontal(self, state: List[List[str]], player: str) -> bool:
         won = False
         line_index = 0
-        column_index = 0
         while (line_index < self.lines) and not won:
+            column_index = 0
             while (column_index < self.columns - 2) and not won:
                 all_equal = True
                 for index in range(3):
@@ -120,9 +124,9 @@ class MinMax:
 
     def _has_player_won_on_state_vertical(self, state: List[List[str]], player: str) -> bool:
         won = False
-        line_index = 0
         column_index = 0
         while (column_index < self.columns) and not won:
+            line_index = 0
             while (line_index < self.lines - 2) and not won:
                 all_equal = True
                 for index in range(3):
@@ -143,8 +147,8 @@ class MinMax:
     def _has_player_won_on_state_increasing_diagonal(self, state: List[List[str]], player: str) -> bool:
         won = False
         line_index = 0
-        column_index = 0
         while (line_index < self.lines - 2) and not won:
+            column_index = 0
             while (column_index < self.columns - 2) and not won:
                 all_equal = True
                 for index in range(3):
@@ -158,18 +162,18 @@ class MinMax:
 
     def _has_player_won_on_state_decreasing_diagonal(self, state: List[List[str]], player: str) -> bool:
         won = False
-        line_index = self.lines - 1
-        column_index = self.columns - 1
-        while (line_index >= 2) and not won:
+        line_index = 0
+        while (line_index < self.lines - 2) and not won:
+            column_index = self.columns - 1
             while (column_index >= 2) and not won:
                 all_equal = True
                 for index in range(3):
-                    if not (state[line_index - index][column_index - index] == player):
+                    if not (state[line_index + index][column_index - index] == player):
                         all_equal = False
                 if all_equal:
                     won = True
                 column_index -= 1
-            line_index -= 1
+            line_index += 1
         return won
 
     def _update_state_based_on_points(self, possible_plays: List[List[List[str]]], points: List[int]):
