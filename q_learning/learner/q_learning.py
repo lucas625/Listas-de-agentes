@@ -45,7 +45,7 @@ class QLearner:
         Perform the actions necessary for running the episode.
         :param int episode_index: the 1-based episode index.
         """
-        print(f'Trajetória {episode_index}')
+        print(f'----- Trajetória {episode_index} -----')
         print('Estado atual / Ação / Próximo estado')
         score = 0
         self._env.reset()  # start episode
@@ -58,6 +58,15 @@ class QLearner:
             score += reward
             self._update_table(state_index, action_index, reward, next_state_index)
             state_index = next_state_index
+
+        print('----- Printing table -----')
+        self._env.print_actions()
+        table_string = [
+            f'State {index}: ' + ' '.join([str(state_action_reward) for state_action_reward in state_action_rewards]) for
+            index, state_action_rewards in
+            enumerate(self._table)
+        ]
+        print('\n'.join(table_string))
 
     def _choose_action_by_epsilon_greedy(self, state_index: int) -> int:
         """

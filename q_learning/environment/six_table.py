@@ -64,3 +64,6 @@ class SixTable:
 
     def _is_done(self):
         return self._state == self._target
+
+    def print_actions(self):
+        print('Actions: ' + ' '.join(self._actions))
