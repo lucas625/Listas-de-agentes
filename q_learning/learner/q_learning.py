@@ -36,7 +36,7 @@ class QLearner:
         for episode_index in range(1, self._number_of_episodes + 1):
             self._iterate_episode(episode_index)
         self._print_table()
-        
+
     def _print_table(self):
         print('----- Printing table -----')
         self._env.print_actions()
